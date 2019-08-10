@@ -1,22 +1,35 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>我的主页</title>-->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
 
-<!--</head>-->
-<!--<body>-->
-<!--<h1>我的第一个主页</h1>-->
+<h1>Blog</h1>
 
-<!--{% for temp in hp.all %}-->
-<!--{{ temp.description }}-->
 
-<!--<img src="{{ temp.image.url }}">-->
-<!--<br>-->
-<!--{% endfor %}-->
+{% for blog in blogs.all %}
 
-<!--</body>-->
-<!--</html>-->
+{{ blog.title }}
+<br>
+
+{{ blog.data }}
+<br>
+
+<img src="{{ blog.image.url }}">
+<br>
+
+{{ blog.text }}
+<br>
+
+{% endfor %}
+
+</body>
+</html>
+-->
+
 
 
 
@@ -28,7 +41,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Album example · Bootstrap</title>
+    <title>我的博客</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -57,7 +70,7 @@
 
   </head>
   <body>
- 	
+
     <header>
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
@@ -94,38 +107,44 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Album example</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+      <h1 class="jumbotron-heading">说明文档</h1>
+      <p class="lead text-muted">说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档说明文档</p>
       <p>
-        <a href="blog" class="btn btn-primary my-2">我的博客</a>
-        <a href="blog/" class="btn btn-secondary my-2">Secondary action</a>
+        <a href="/" class="btn btn-primary my-2">回到主页</a>
+
       </p>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+
     <div class="container">
-      <div class="row">
 
-      	{% for temp in hp.all %}
-      		
-      	
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
 
-                <img class="card-img-top" src="{{ temp.image.url }}">
 
-            <div class="card-body">
-                <p class="card-text">{{ temp.description }}</p>
-                <a href="{{ temp.id }}">hello</a>
-            </div>
-          </div>   
-        </div>
-		{% endfor %}
+        {% for blog in blogs.all %}
 
-      </div>
+          <h2><a href="{{blog.id}}">{{ blog.title }}</a></h2>
+
+        <br>
+
+
+        {{ blog.data }}
+        <br>
+
+        <img src="{{ blog.image.url }}" height=300 >
+        <br>
+        <p>
+        {{ blog.text }}
+        </p>
+
+
+        <br>
+
+        {% endfor %}
+
+
     </div>
-  </div>
+
 
 </main>
 

@@ -20,6 +20,7 @@ from . import views
 
 from django.conf.urls.static import static
 from django.conf import settings
+import homepage.views
 
 
 urlpatterns = [
@@ -27,7 +28,9 @@ urlpatterns = [
     path('', views.home),
     path('count/',home.count),
     path('s/', home.home),
-    path('blog/', include('blog.urls'))
-    # path('blog/', blog.blog_page)
+    path('blog/', include('blog.urls')),
+    path('<int:tempid>/', homepage.views.home_text)
+
+    # path('blog/', blog11.blog_page)
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
