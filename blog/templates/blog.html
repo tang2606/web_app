@@ -118,29 +118,31 @@
 
 
     <div class="container">
-      <div class="row">
+
 
 
         {% for blog in blogs.all %}
 
-        {{ blog.title }}
+          <h2><a href="{{blog.id}}">{{ blog.title }}</a></h2>
+
         <br>
+
 
         {{ blog.data }}
         <br>
 
-        <img src="{{ blog.image.url }}">
+        <img src="{{ blog.image.url }}" height=300 >
         <br>
-
+        <p>
         {{ blog.text }}
+        </p>
+
+
         <br>
 
         {% endfor %}
 
 
-
-
-      </div>
     </div>
 
 
