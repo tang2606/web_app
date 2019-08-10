@@ -2,16 +2,11 @@
     pre {
         white-space: pre-wrap;
         word-wrap: break-spaces;
-
     }
 
 </style>
-
-
+<pre style="width: 750px; font-size: 150%; margin: 20px auto;">
 <div class="text-align: center">
-
-
-
 
     <div align="center">
         <h1>{{ hp.title }}</h1>
@@ -20,8 +15,12 @@
     </div>
 
 
-
 </div>
-<pre style="width: 750px; font-size: 150%; margin: 20px auto;">
-    {{ hp.description }}
+
+
+
+    <div align="center">
+        <h1>{{ hp.description }}</h1>
+        <img src="{{ hp.image.url }}" height=50%; >
+    </div>
 </pre>
