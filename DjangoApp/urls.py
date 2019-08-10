@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home.home),
     path('count/',home.count),
-    path('/heme/', home.home)
+
 ]
